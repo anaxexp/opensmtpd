@@ -6,9 +6,15 @@ if [[ -n "${DEBUG}" ]]; then
     set -x
 fi
 
+_gotpl() {
+    if [[ -f "/etc/gotpl/$1" ]]; then
+        gotpl "/etc/gotpl/$1" > "$2"
+    fi
+}
+
 chmod 711 /var/spool/smtpd
 
-gotpl "/etc/gotpl/smtpd.conf.tpl" > "/etc/smtpd/smtpd.conf"
+_gotpl "/etc/gotpl/smtpd.conf.tmpl" > "/etc/smtpd/smtpd.conf"
 
 if [[ -n "${RELAY_USER}" ]]; then
     if [[ -n "${RELAY_PASSWORD}" ]]; then

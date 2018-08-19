@@ -1,4 +1,4 @@
-FROM anaxexperience/alpine:3.7
+FROM anaxexp/alpine:3.8-2.1.0
 
 ARG OPENSMTPD_VER
 
@@ -17,9 +17,9 @@ WORKDIR /var/spool/smtpd
 
 EXPOSE 25
 
-COPY smtpd.conf.tpl /etc/gotpl/
+COPY bin /usr/local/bin
+COPY templates /etc/gotpl/
 COPY docker-entrypoint.sh /
-COPY actions.mk /usr/local/bin/
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
