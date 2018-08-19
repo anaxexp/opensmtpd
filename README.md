@@ -1,20 +1,20 @@
 # OpenSMTPD Docker Container Image
 
 [![Build Status](https://travis-ci.org/anaxexp/opensmtpd.svg?branch=master)](https://travis-ci.org/anaxexp/opensmptd)
-[![Docker Pulls](https://img.shields.io/docker/pulls/anaxexperience/opensmtpd.svg)](https://hub.docker.com/r/anaxexperience/opensmtpd)
-[![Docker Stars](https://img.shields.io/docker/stars/anaxexperience/opensmtpd.svg)](https://hub.docker.com/r/anaxexperience/opensmtpd)
-[![Docker Layers](https://images.microbadger.com/badges/image/anaxexperience/opensmtpd.svg)](https://microbadger.com/images/anaxexperience/opensmtpd)
+[![Docker Pulls](https://img.shields.io/docker/pulls/anaxexp/opensmtpd.svg)](https://hub.docker.com/r/anaxexp/opensmtpd)
+[![Docker Stars](https://img.shields.io/docker/stars/anaxexp/opensmtpd.svg)](https://hub.docker.com/r/anaxexp/opensmtpd)
+[![Docker Layers](https://images.microbadger.com/badges/image/anaxexp/opensmtpd.svg)](https://microbadger.com/images/anaxexp/opensmtpd)
 
 ## Docker Images
 
-!!! For better reliability we release images with stability tags (`anaxexperience/opensmtpd:6-X.X.X`) which correspond to [git tags](https://github.com/anaxexp/opensmtpd/releases). We **STRONGLY RECOMMEND** using images only with stability tags. 
+!!! For better reliability we release images with stability tags (`anaxexp/opensmtpd:6-X.X.X`) which correspond to [git tags](https://github.com/anaxexp/opensmtpd/releases). We **STRONGLY RECOMMEND** using images only with stability tags.
 
 Overview:
 
 * All images are based on Alpine Linux
-* Base image: [anaxexperience/alpine](https://github.com/anaxexp/alpine)
+* Base image: [anaxexp/alpine](https://github.com/anaxexp/alpine)
 * [Travis CI builds](https://travis-ci.org/anaxexp/opensmtpd) 
-* [Docker Hub](https://hub.docker.com/r/anaxexperience/opensmtpd)
+* [Docker Hub](https://hub.docker.com/r/anaxexp/opensmtpd)
 
 Supported tags and respective `Dockerfile` links:
 
@@ -40,7 +40,7 @@ make COMMAND [params ...]
 
 commands:
     check-ready [host max_try wait_seconds delay_seconds]
- 
+
 default params values:
     host localhost
     max_try 1
