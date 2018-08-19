@@ -1,4 +1,4 @@
--include env.mk
+-include env_make
 
 OPENSMTPD_VER = 6.0.2
 OPENSMTPD_MINOR_VER ?= $(shell echo "${OPENSMTPD_VER}" | grep -oE '^[0-9]+\.[0-9]+')
@@ -22,7 +22,7 @@ build:
 	docker build -t $(REPO):$(TAG) --build-arg OPENSMTPD_VER=$(OPENSMTPD_VER) ./
 
 test:
-	cd ./tests && ./run.sh $(NAME) $(REPO):$(TAG)
+	cd ./tests && IMAGE=$(REPO):$(TAG) ./run.sh
 
 push:
 	docker push $(REPO):$(TAG)
