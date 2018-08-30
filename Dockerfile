@@ -1,4 +1,4 @@
-FROM anaxexp/alpine:3.8-2.1.0
+FROM anaxexp/alpine:3.7-2.1.0
 
 ARG OPENSMTPD_VER
 
