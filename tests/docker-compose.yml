@@ -2,4 +2,4 @@ version: "2"
 
 services:
   opensmtpd:
-    image: anaxexp/opensmtpd:6.0
+    image: $IMAGE

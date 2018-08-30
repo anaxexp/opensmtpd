@@ -14,19 +14,21 @@ trap "docker rm -vf $cid > /dev/null" EXIT
 
 #opensmtpd() {
 	#docker run --rm -i --link "${name}" "${image}" "${@}"
-    docker-compose up -d
+    #docker-compose up -d
 #}
 
+opensmtpd() {
+	docker run --rm -i --link "${name}" "${image}" "${@}"
+}
+
 echo -n "Waiting for OpenSMTPD to start... "
-docker-compose exec opensmtpd make check-ready host="${name}" max_try=10
+opensmtpd make check-ready host="${name}" max_try=10
 echo "OK"
 
 echo -n "Checking OpenSMTPD version... "
-docker-compose exec opensmtpd smtpd -h 2>&1 | grep -q "OpenSMTPD 6.0.*"
+opensmtpd smtpd -h 2>&1 | grep -q "OpenSMTPD 6.0.*"
 echo "OK"
 
 echo -n "Validating OpenSMTPD config... "
-docker-compose exec opensmtpd smtpd -n 2>&1 | grep -q "configuration OK"
+opensmtpd smtpd -n 2>&1 | grep -q "configuration OK"
 echo "OK"
-
-docker-compose down
