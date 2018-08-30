@@ -16,7 +16,7 @@ trap "docker rm -vf $cid > /dev/null" EXIT
 	#docker run --rm -i --link "${name}" "${image}" "${@}"
     #docker-compose up -d
 #}
-
+docker run -d --name "${name}" "${image}"
 opensmtpd() {
 	docker run --rm -i --link "${name}" "${image}" "${@}"
 }
