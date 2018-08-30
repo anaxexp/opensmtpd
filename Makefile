@@ -22,7 +22,7 @@ build:
 	docker build -t $(REPO):$(TAG) --build-arg OPENSMTPD_VER=$(OPENSMTPD_VER) ./
 
 test:
-	cd ./tests && $(NAME) $(REPO):$(TAG) ./run.sh
+	cd ./tests && ./run.sh $(NAME) $(REPO):$(TAG)
 
 push:
 	docker push $(REPO):$(TAG)
